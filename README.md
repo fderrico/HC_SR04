@@ -1,7 +1,7 @@
 <a id="library"></a>
 # HC_SR04
 ## DESCRIPTION:  
-Arduino Library for HC-SR04 Ultrasonic Ranging Module.   
+Arduino Library for HC-SR04 Ultrasonic Ranging Module with ```MULTI MODULE SUPPORT```    
 - Library uses interrupts for measuring sound reflection times.  
 - Library uses only SI measurement units and imperial units.    
 - Sound speed in meters is set to: 	```standard approximated value at 20°C 340m/s```
@@ -44,7 +44,7 @@ Instance object of the ultrasonic measurement module HC-SR04.
 #### Example
 ``` cpp
 HC_SR04 module1(9,10);  // module1 connected on digital pins 9 (Trigger PIN) and 10 (Echo PIN)
-HC_SR04 module1(9, 10, 100);     // as above but limited to 100 cm measuring range
+HC_SR04 module2(6, 7, 100); //the second module is connected on pins 7 and 9 and limited to 100 cm measuring range
 ```
 [Back to interface](#interface)
 
