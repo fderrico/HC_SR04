@@ -80,9 +80,7 @@ void HC_SR04::sendTriggerPulse(){
 	digitalWrite(TrigPIN, LOW);
 }
 long HC_SR04::evaluateEchoPulseDuration(){
-	duration = pulseIn(EchoPIN,HIGH,getTimeOut());
-	if ( duration == 0 ) {
-		duration = 0 ;}
+	long duration = pulseIn(EchoPIN,HIGH,getTimeOut());	
 	return duration;
 }
 long HC_SR04::getDistance_in_cm(){
@@ -90,7 +88,7 @@ long HC_SR04::getDistance_in_cm(){
 	long EchoPulseDuration=evaluateEchoPulseDuration();	
 	long distance_in_cm = DISTANCE_IN_CM;  
 	if (distance_in_cm > getUpper_Limit_Range_cm()){
-		distance_in_cm=-1;
+		distance_in_cm=0;
 	}
 	return distance_in_cm; 
 }
